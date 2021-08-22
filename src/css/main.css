@@ -258,3 +258,40 @@ input[type="password"]{
 #dashAnalyticsAlert{
     margin: 2% 0%;
 }
+
+/* Users Page Style */
+
+.dashboardRightSectionUser{
+    display: block;
+    height: 100vh;
+    padding: 1% 5%;
+}
+
+.userTable{
+    width: 99.9%;
+}
+
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: var(--dark);
+    border-style: solid;
+    color: #000000;
+    
+}
+                        
+table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: var(--dark);
+    border-bottom: solid;
+    border-top: solid;
+    padding: 2%;
+    
+}
+                        
+table.GeneratedTable thead {
+    background-color: var(--secondary);
+    text-align: left;
+}
