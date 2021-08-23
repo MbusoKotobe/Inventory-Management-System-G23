@@ -179,6 +179,12 @@ input[type="password"]{
     align-items: center;
 }
 
+.dashboardRightSectionGen{
+    display: block;
+    height: 100vh;
+    padding: 1% 5%;
+}
+
 .productsDash{
     grid-area: productsDash;
 }
@@ -260,6 +266,8 @@ input[type="password"]{
 }
 
 /* Users Page Style */
+
+
 
 .dashboardRightSectionUser{
     display: block;
