@@ -33,6 +33,58 @@ $JQ(document).ready(function ()
         }
     });
 
-    console.log(datae);
-    
+    $JQ('#addUserCloseModal').on('click', function (e)
+    {
+        $JQ('.addUserModal').hide('fast');
+        $JQ('.updateUserModal').hide('fast');
+        $JQ('.removeUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity': '1' });
+    });
+
+    $JQ('#updateUserCloseModal').on('click', function (e)
+    {
+        e.preventDefault();
+        $JQ('.addUserModal').hide('fast');
+        $JQ('.updateUserModal').hide('fast');
+        $JQ('.removeUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity': '1' });
+    });
+
+    $JQ('#removeUserCloseModal').on('click', function(e)
+    {
+        e.preventDefault();
+        $JQ('.addUserModal').hide('fast');
+        $JQ('.updateUserModal').hide('fast');
+        $JQ('.removeUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity': '1' });
+    });
+
+    $JQ('#addUser').on('click', function (e)
+    {
+        e.preventDefault();
+        $JQ('.addUserModal' ).toggle();
+        $JQ('.updateUserModal').hide('fast');
+        $JQ('.removeUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity' : '0.5'});
+
+    });
+
+    $JQ('#updateUser').on('click', function (e)
+    {
+        e.preventDefault();
+        $JQ('.updateUserModal').toggle();
+        $JQ('.addUserModal').hide('fast');
+        $JQ('.removeUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity': '0.5' });
+    });
+
+    $JQ('#removeUser').on('click', function (e)
+    {
+        e.preventDefault();
+        $JQ('.removeUserModal').toggle();
+        $JQ('.addUserModal').hide('fast');
+        $JQ('.updateUserModal').hide('fast');
+        $JQ('.userTable').css({ 'opacity': '0.55' });
+    });
+ 
 });

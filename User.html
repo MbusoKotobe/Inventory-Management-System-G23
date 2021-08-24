@@ -89,17 +89,17 @@
                 </header>
                 <section class="dashboardRightSectionUser">
                     <div class="operations">
-                        <button>
+                        <button id="addUser">
                             <i class="fas fa-user-plus"></i>
                             Add New User
                         </button>
 
-                        <button>
+                        <button id="updateUser">
                             <i class="fas fa-user-edit"></i>
                             Update User Details
                         </button>
 
-                        <button>
+                        <button id="removeUser">
                             <i class="fas fa-user-times"></i>
                             Remove User
                         </button>
@@ -125,7 +125,7 @@
 
                     <!-- Add User Modal -->
                     <div class="Modal  addUserModal">
-                        <button id="closeModal" disabled="disabled">
+                        <button id="addUserCloseModal" class="closeModal">
                             <i class="fas fa-times"></i>
                         </button>
                         <h1>
@@ -167,7 +167,7 @@
 
                     <!-- Update User Details Modal -->
                     <div class="Modal updateUserModal">
-                        <button id="closeModal" disabled="disabled">
+                        <button id="updateUserCloseModal"  class="closeModal">
                             <i class="fas fa-times"></i>
                         </button>
                         <h1>
@@ -184,7 +184,7 @@
 
                     <!-- Remove User Modal -->
                     <div class="Modal removeUserModal">
-                        <button id="closeModal" disabled="disabled">
+                        <button id="removeUserCloseModal"  class="closeModal">
                             <i class="fas fa-times"></i>
                         </button>
                         <h1>
