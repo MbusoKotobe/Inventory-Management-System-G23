@@ -89,9 +89,20 @@
                 </header>
                 <section class="dashboardRightSectionUser">
                     <div class="operations">
-                        <button>Add New User</button>
-                        <button>Update User Details</button>
-                        <button>Remove User</button>
+                        <button>
+                            <i class="fas fa-user-plus"></i>
+                            Add New User
+                        </button>
+
+                        <button>
+                            <i class="fas fa-user-edit"></i>
+                            Update User Details
+                        </button>
+
+                        <button>
+                            <i class="fas fa-user-times"></i>
+                            Remove User
+                        </button>
                     </div>
                     <div class="userTable">
                         <table class="GeneratedTable">
@@ -110,6 +121,82 @@
                         </table>
                         <!-- Codes by Quackit.com -->
 
+                    </div>
+
+                    <!-- Add User Modal -->
+                    <div class="Modal  addUserModal">
+                        <button id="closeModal" disabled="disabled">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Add New User
+                        </h1>
+                        <form action="#" method="post">
+                            <label for="name">Name</label>
+                            <input type="text" name="_name" id="_name">
+                            
+                            <label for="name">Last Name</label>
+                            <input type="text" name="_lastName" id="_lastName">
+
+                            <label for="name">Email</label>
+                            <input type="email" name="_email" id="_email">
+
+                            <label for="name">Cellphone</label>
+                            <input type="text" name="_cellphone" id="_cellphone">
+                            
+                            <label for="name">Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_password" id="_password">
+                            </div>
+
+                            <label for="name">Repeat Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_password2" id="_password2">
+                            </div>
+
+                            <input type="button" value="Submit User">
+                        </form>
+                    </div>
+
+                    <!-- Update User Details Modal -->
+                    <div class="Modal updateUserModal">
+                        <button id="closeModal" disabled="disabled">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Update User Details
+                        </h1>
+                        <form action="#" method="post" id="updateUserForm">
+                            <label for="name">Enter User Id</label>
+                            <input type="text" name="_name" id="_name">   
+                    
+                            <input type="button" value="Submit Id">
+                        </form>
+                    </div>
+
+                    <!-- Remove User Modal -->
+                    <div class="Modal removeUserModal">
+                        <button id="closeModal" disabled="disabled">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-times"></i><br>
+                            Remove User
+                        </h1>
+                        <form action="#" method="post">
+                            <label for="name">Enter User Id</label>
+                            <input type="text" name="_name" id="_name">
+                    
+                            <input type="button" value="Remove User">
+                        </form>
                     </div>
                 </section>
             </div>

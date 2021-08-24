@@ -28,6 +28,24 @@ input{
     margin: 0;
 }
 
+input[type="button"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+button {
+    background: var(--gradientColorDarker);
+    color: var(--light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .container{
     font-family: 'Varela Round', sans-serif;
     height: 100vh;
@@ -278,6 +296,7 @@ input[type="password"]{
 }
 
 .dashboardRightSectionUser{
+    position: relative;
     display: block;
     padding: 1% 5%;
 }
@@ -327,7 +346,7 @@ table.GeneratedTable td, table.GeneratedTable th {
     border-color: var(--dark);
     border-bottom: solid;
     border-top: solid;
-    padding: 2%;
+    padding: 2% 1.5%;
 }
                         
 table.GeneratedTable thead {
@@ -340,4 +359,101 @@ table.GeneratedTable thead {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+}
+
+#closeModal{
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.Modal form{
+    width: 100%;
+}
+
+.Modal h1{
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+.Modal input[type="text"],
+input[type="email"],
+input[type="password"]{
+    padding: 3% 2%;
+    border-radius: 10px;
+    border: 3px solid var(--secondary);
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.Modal input[type="button"]{
+    background-color: var(--gradientColorDarker);
+    padding: 3.5% 2%;
+    color: var(--light);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.addUserModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.updateUserModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.removeUserModal{
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.passBox {
+    position: relative;
+}
+
+.passBox button{
+    position: absolute;
+    right: 5%;
+    top: 22%; 
+    color: var(--dark);
+}
+
+.pwdVisibility {
+    font-size: 19.5px;
+    border: none;
+    background: none;
 }
