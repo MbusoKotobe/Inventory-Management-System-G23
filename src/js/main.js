@@ -183,16 +183,45 @@ $JQ(document).ready(function ()
     $JQ('#submitRemoveUserBtn').on('click', function(e)
     {
         e.preventDefault();
+        var userData;
+        var userToRemoveForm = $JQ('#removeUserForm')[0];
+        var formData = new FormData(userToRemoveForm);
+        var userToRequest = formData.get("_id");
+        var usersData = localStorage.getItem("usersData");
+        usersData = JSON.parse(usersData);
+        for (var i = 0; i < usersData.results.length; ++i)
+        {
+            if (usersData.results[i].id.value === userToRequest)
+            {
+                userData = usersData.results[i];
+                break;
+            }
+        }
+
         if (isFieldEmpty($JQ('#removeUserForm')[0]))
         {
             showEmptyFieldError();
         }else{
-            closeAllOpenedFormModals();
-            showSuccessMessage("User Successfully Removed");
-            setTimeout(function ()
+            if (userData === undefined)
             {
-                location.reload();
-            }, 3000);
+                closeAllOpenedFormModals();
+                resetAllForms();
+                showErrorMessage("Invalid User ID, user not found");
+                setTimeout(function ()
+                {
+                    location.reload();
+                }, 3000);
+                return false;
+            }else{
+                closeAllOpenedFormModals();
+                resetAllForms();
+                showSuccessMessage("User Successfully Removed");
+                setTimeout(function ()
+                {
+                    location.reload();
+                }, 3000);
+                
+            }
         }
     });
 
