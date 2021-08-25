@@ -14,6 +14,7 @@ html, body{
     margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    font-family: 'Varela Round', sans-serif;
 }
 
 label{
@@ -47,10 +48,55 @@ button:hover {
 }
 
 .container{
-    font-family: 'Varela Round', sans-serif;
     height: 100vh;
     color: var(--dark);
     overflow-y: scroll;
+}
+
+.successMessageBox{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 44%;
+    width: 450px;
+    height: 350px;
+    padding: 2%;
+    background: var(--light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.successMessageBox img{
+    width: 200px;
+    height: 200px;
+}
+
+.errorMessageBox{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 44%;
+    width: 450px;
+    height: 350px;
+    padding: 2%;
+    background: var(--light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.errorMessageBox img{
+    width: 200px;
+    height: 200px;
+}
+
+#errorMsg{
+    color: rgb(204, 70, 70);
+}
+
+#successMsg{
+    color: rgb(204, 70, 70);
 }
 
 .loginSection{
@@ -428,6 +474,19 @@ input[type="password"]{
     padding-bottom: 5%;
 }
 
+.updateUserSecondModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
 .removeUserModal{
     display: none;
     position: absolute;
@@ -453,6 +512,12 @@ input[type="password"]{
 }
 
 .pwdVisibility {
+    font-size: 19.5px;
+    border: none;
+    background: none;
+}
+
+.pwdVisibilityOld{
     font-size: 19.5px;
     border: none;
     background: none;

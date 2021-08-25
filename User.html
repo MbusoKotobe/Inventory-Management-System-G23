@@ -132,7 +132,7 @@
                             <i class="fas fa-user-edit"></i><br>
                             Add New User
                         </h1>
-                        <form action="#" method="post">
+                        <form action="#" method="post" id="addNewUserForm">
                             <label for="name">Name</label>
                             <input type="text" name="_name" id="_name">
                             
@@ -161,7 +161,7 @@
                                 <input type="password" name="_password2" id="_password2">
                             </div>
 
-                            <input type="button" value="Submit User">
+                            <input type="button" value="Submit User" id="submitNewUserBtn">
                         </form>
                     </div>
 
@@ -174,11 +174,61 @@
                             <i class="fas fa-user-edit"></i><br>
                             Update User Details
                         </h1>
-                        <form action="#" method="post" id="updateUserForm">
+                        <form action="#" method="post" id="updateUserForm" name="updateUserForm">
                             <label for="name">Enter User Id</label>
-                            <input type="text" name="_name" id="_name">   
+                            <input type="text" name="_id" id="_userId">   
                     
-                            <input type="button" value="Submit Id">
+                            <input type="button" value="Submit Id" id="updateUserIDBtn">
+                        </form>
+                    </div>
+
+                    <!-- Update User Details Second Modal -->
+                    <div class="Modal  updateUserSecondModal">
+                        <button id="updateUserCloseSecondModal" class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Update User Details
+                        </h1>
+                        <form action="#" method="post" id="updateUserSecondForm" name="updateUserSecondForm">
+                            <label for="name">Name</label>
+                            <input type="text" name="_name" id="_updateName">
+                    
+                            <label for="name">Last Name</label>
+                            <input type="text" name="_lastName" id="_updateLastName">
+                    
+                            <label for="name">Email</label>
+                            <input type="email" name="_email" id="_updatEemail">
+                    
+                            <label for="name">Cellphone</label>
+                            <input type="text" name="_cellphone" id="_updateCellphone">
+                    
+                            <label for="name">Old Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibilityOld" id="pwdVisibilityOld">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updateOldPassword" id="_updateOldPassword">
+                            </div>
+
+                            <label for="name">Create New Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updatePassword" id="_updatePassword">
+                            </div>
+                    
+                            <label for="name">Repeat New Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updatePassword2" id="_updatePassword2">
+                            </div>
+                    
+                            <input type="button" value="Submit User" id="submitUpdatedUserDetailsBtn">
                         </form>
                     </div>
 
@@ -191,16 +241,36 @@
                             <i class="fas fa-user-times"></i><br>
                             Remove User
                         </h1>
-                        <form action="#" method="post">
+                        <form action="#" method="post" id="removeUserForm">
                             <label for="name">Enter User Id</label>
                             <input type="text" name="_name" id="_name">
                     
-                            <input type="button" value="Remove User">
+                            <input type="button" value="Remove User" id="submitRemoveUserBtn">
                         </form>
                     </div>
                 </section>
             </div>
         </section>
+    </div>
+
+    <div class="errorMessageBox">
+        <h2>
+            An Error Occured
+        </h2>
+        <h4 id="errorMsg">
+
+        </h4>
+        <img src="resources\images\sad-emoji.gif" alt="success" />
+    </div>
+
+    <div class="successMessageBox">
+        <h1>
+            Success!
+        </h1>
+        <h4 id="successMsg">
+        
+        </h4>
+        <img src="resources\images\check-green.gif" alt="success" />
     </div>
 </body>
 <script src="src/js/main.js"></script>
