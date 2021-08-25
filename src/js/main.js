@@ -71,8 +71,13 @@ $JQ(document).ready(function ()
         $JQ('.updateUserModal').hide('fast');
         $JQ('.updateUserSecondModal').hide('fast');
         $JQ('.removeUserModal').hide('fast');
-        $JQ('.userTable').css({ 'opacity' : '0.5'});
-
+        if ($JQ('.userTable').css('opacity') === '0.5') 
+        {
+            resetOpacity();
+        }else{
+            $JQ('.userTable').css({ 'opacity': '0.5' });
+        }
+        
     });
 
     $JQ('#updateUser').on('click', function (e)
