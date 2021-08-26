@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan-Lee Klink 218236883">
+    <title>IMS | AddIventory</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src\css\main.css">
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/1c3a9f7338.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="dashboard">
+            <div class="leftPanel">
+                <section class="dashboardLeftSection">
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-home"></i>
+                        <a href="Dashboard.html">
+                            Home
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-box-open"></i>
+                        <a href="">
+                            Products
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-cart-plus"></i>
+                        <a href="Add_Inventory.html">
+                            Add Inventory
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-trash"></i>
+                        <a href="">
+                            Remove Inventory
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-users"></i>
+                        <a href="User.html">
+                            Users
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-bell"></i>
+                        <a href="" id="innerNotificationMessage">
+                            Notifications
+                            <div class="innerNotification">
+                                <h4>32</h4>
+                            </div>
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-chart-bar"></i>
+                        <a href="">
+                            Analytics
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="righPanel">
+                <header class="dashboardHeading">
+                    <h1>
+                        Add Inventory Page
+                    </h1>
+                </header>
+                
+                <!-- PLEASE NOTE!!!-->
+                <!-- 
+                    The class here below named dashboardRightSection 
+                    has grid styling rules set to it.
+                    TO REMOVE THIS, PLEASE RENAME THE CLASS TO 
+                    dashboardRightSectionGen
+                 -->
+                <section class="dashboardRightSectionGen">                
+                    <form class="AddItemForm" action="#" method="GET">
+                        <fieldset>
+                            <legend>Input Item Details Here</legend>
+        
+                            <label for="productName">Item Name:</label>
+                            <input type="text" name="productName" id="productName" required>
+        
+                            <label for="productPrice">Price of item:</label>
+                            <input type="number" name="productPrice" id="productPrice" min="1" required>
+        
+                            <label for="quantity">Amount of item:</label>
+                            <input type="number" name="quantity" id="quantity" required>
+        
+                            <label for="productId">Product ID:</label>
+                            <input type="text" name="productId" id="productId" required>
+        
+                            <div class=but>
+                            <button type="reset">Reset</button>
+                            <button type="submit">Save</button>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
