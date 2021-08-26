@@ -303,3 +303,43 @@ table.GeneratedTable thead {
     background-color: var(--secondary);
     text-align: left;
 }
+
+/* Add Inventory Page style */
+
+.AddItemForm fieldset {
+    border: solid 2px var(--secondary);
+    border-radius: 15px;
+    width:50%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.AddItemForm input {
+    padding: 4px;
+    border: solid 2px var(--gradientColorDarker);
+    width: 600px;
+    font-size: 20px;
+}
+
+.AddItemForm label{
+    font-size: 25px;
+    display: block;
+    margin-top: 20px;
+}
+
+.AddItemForm legend{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.AddItemForm button{
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 3px 3px;
+    background-color: var(--gradientColorDarker);
+    border-color: var(--gradientColorDarker);
+}
+
+.but {
+    margin-left: 80%;
+}
