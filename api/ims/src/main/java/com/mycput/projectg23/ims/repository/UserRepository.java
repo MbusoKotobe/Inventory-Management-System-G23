@@ -1,9 +1,8 @@
-package com.mycput.projectg23.repository;
+package com.mycput.projectg23.ims.repository;
 
-import com.mycput.projectg23.model.User;
+import com.mycput.projectg23.ims.model.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserRepository implements IUserRepository{
     final String ERROR = "error";

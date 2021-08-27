@@ -1,8 +1,6 @@
-package com.mycput.projectg23.model;
+package com.mycput.projectg23.ims.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 public class User {
     private Long Id;

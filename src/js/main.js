@@ -160,12 +160,31 @@ $JQ(document).ready(function ()
         {
             showEmptyFieldError();
         }else{
+            var user = {
+                Id: 1,
+                name: "",
+                lastName: "",
+                email: "",
+                password: "",
+                userType: "",
+            };
+
+            $JQ.ajax({
+                url: ' http://localhost:8080//User/addUser',
+                method: 'POST',
+                data: user,
+                success: function (data)
+                {
+                    console.log(data);
+                }
+            });
+            
             closeAllOpenedFormModals();
             showSuccessMessage("User Successfully Added");
-            setTimeout(function ()
-            {
-                location.reload();
-            }, 3000);
+            // setTimeout(function ()
+            // {
+            //     location.reload();
+            // }, 3000);
         } 
     });
 

@@ -1,7 +1,8 @@
-package com.mycput.projectg23.controller;
+package com.mycput.projectg23.ims.controller;
 
-import com.mycput.projectg23.model.User;
-import com.mycput.projectg23.repository.UserRepository;
+import com.mycput.projectg23.ims.model.User;
+import com.mycput.projectg23.ims.repository.UserRepository;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,9 +11,9 @@ import java.util.ArrayList;
 public class UserController {
     UserRepository object = new UserRepository();
 
-    @CrossOrigin(origins = "http://localhost:8080")
-    @RequestMapping("/addUser")
-    public User addUser(@RequestParam User newUSer)
+    @CrossOrigin(origins = "http://127.0.0.1:5555")
+    @RequestMapping(path = "/User/addUser")
+    public User addUser(@RequestBody User newUSer)
     {
         return object.addUser(newUSer);
     }
@@ -24,7 +25,7 @@ public class UserController {
         return object.getUser(id);
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://127.0.0.1:5555")
     @RequestMapping(path = "/User/getUsers")
     public ArrayList<User> getUser()
     {
