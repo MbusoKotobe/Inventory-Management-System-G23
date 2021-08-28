@@ -12,6 +12,9 @@
 html, body{
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: 'Varela Round', sans-serif;
 }
 
 label{
@@ -26,10 +29,74 @@ input{
     margin: 0;
 }
 
+input[type="button"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+button {
+    background: var(--gradientColorDarker);
+    color: var(--light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .container{
-    font-family: 'Varela Round', sans-serif;
     height: 100vh;
     color: var(--dark);
+    overflow-y: scroll;
+}
+
+.successMessageBox{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 44%;
+    width: 450px;
+    height: 350px;
+    padding: 2%;
+    background: var(--light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.successMessageBox img{
+    width: 200px;
+    height: 200px;
+}
+
+.errorMessageBox{
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 44%;
+    width: 450px;
+    height: 350px;
+    padding: 2%;
+    background: var(--light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.errorMessageBox img{
+    width: 200px;
+    height: 200px;
+}
+
+#errorMsg{
+    color: rgb(204, 70, 70);
+}
+
+#successMsg{
+    color: rgb(204, 70, 70);
 }
 
 .loginSection{
@@ -127,7 +194,7 @@ input[type="password"]{
 
 .dashboard{
     display: grid;
-    grid-template-columns: repeat(2, 23% 73%);
+    grid-template-columns: repeat(2, 23% 77%);
     height: 100vh;
 }
 
@@ -143,6 +210,9 @@ input[type="password"]{
 
 .dashboardLeftSection{
     padding: 20% 10%;
+    position: fixed;
+    top: -30%;
+    left: -8%;
 }
 
 .dashboardLeftOption{
@@ -267,27 +337,54 @@ input[type="password"]{
 
 /* Users Page Style */
 
-
+.rightPanel{
+    overflow-y: auto;
+}
 
 .dashboardRightSectionUser{
+    position: relative;
     display: block;
-    height: 100vh;
     padding: 1% 5%;
+}
+
+.operations{
+    padding: 2%;
+    text-align: right;
+    border-top: 2px solid var(--dark);
+    border-left: 2px solid var(--dark);
+    border-right: 2px solid var(--dark);
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.operations button{
+    background-color: var(--gradientColorDarker);
+    padding: 1% 2%;
+    color: var(--light);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
 }
 
 .userTable{
     width: 99.9%;
+    padding-bottom: 5%;
+    
 }
 
-table.GeneratedTable {
+table {
     width: 100%;
     background-color: #ffffff;
     border-collapse: collapse;
     border-width: 2px;
     border-color: var(--dark);
     border-style: solid;
-    color: #000000;
-    
+    color: var(--dark);
+    border-radius: 15px;
 }
                         
 table.GeneratedTable td, table.GeneratedTable th {
@@ -295,8 +392,7 @@ table.GeneratedTable td, table.GeneratedTable th {
     border-color: var(--dark);
     border-bottom: solid;
     border-top: solid;
-    padding: 2%;
-    
+    padding: 2% 1.5%;
 }
                         
 table.GeneratedTable thead {
@@ -304,7 +400,135 @@ table.GeneratedTable thead {
     text-align: left;
 }
 
+.closeModal{
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.Modal form{
+    width: 100%;
+}
+
+.Modal h1{
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+.Modal input[type="text"],
+input[type="email"],
+input[type="password"]{
+    padding: 3% 2%;
+    border-radius: 10px;
+    border: 3px solid var(--secondary);
+    width: 95%;
+    margin-bottom: 5%;
+}
+
+.Modal input[type="button"]{
+    background-color: var(--gradientColorDarker);
+    padding: 3.5% 2%;
+    color: var(--light);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.addUserModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.updateUserModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.updateUserSecondModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.removeUserModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 540px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #fead68, 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: var(--light);
+    padding: 2%;
+    padding-bottom: 5%;
+}
+
+.passBox {
+    position: relative;
+}
+
+.passBox button{
+    position: absolute;
+    right: 5%;
+    top: 22%; 
+    color: var(--dark);
+}
+
+.pwdVisibility {
+    font-size: 19.5px;
+    border: none;
+    background: none;
+}
+
+.pwdVisibilityOld{
+    font-size: 19.5px;
+    border: none;
+    background: none;
+}
+
+
 /* Add Inventory Page style */
+
+.but {
+    margin-left: 80%;
+    border-radius: 15px;
+}
+
+#tbody img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
 
 .AddItemForm fieldset {
     border: solid 2px var(--secondary);
@@ -338,8 +562,4 @@ table.GeneratedTable thead {
     padding: 3px 3px;
     background-color: var(--gradientColorDarker);
     border-color: var(--gradientColorDarker);
-}
-
-.but {
-    margin-left: 80%;
 }

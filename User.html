@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="src\css\main.css">
 
     <!-- Scripts -->
+    <script src="src\js\jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/1c3a9f7338.js"></script>
 </head>
 
@@ -37,6 +39,13 @@
                         <i class="fas fa-cart-plus"></i>
                         <a href="">
                             Add Inventory
+                        </a>
+                    </div>
+
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-pencil-alt"></i>
+                        <a href="">
+                            Update Inventory
                         </a>
                     </div>
 
@@ -80,76 +89,190 @@
                     </h1>
                 </header>
                 <section class="dashboardRightSectionUser">
+                    <div class="operations">
+                        <button id="addUser">
+                            <i class="fas fa-user-plus"></i>
+                            Add New User
+                        </button>
+
+                        <button id="updateUser">
+                            <i class="fas fa-user-edit"></i>
+                            Update User Details
+                        </button>
+
+                        <button id="removeUser">
+                            <i class="fas fa-user-times"></i>
+                            Remove User
+                        </button>
+                    </div>
                     <div class="userTable">
                         <table class="GeneratedTable">
                             <thead>
                                 <tr>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Cellphone</th>
+                                    <th>Date Added</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                </tr>
+                            <tbody id="tbody">
+
                             </tbody>
                         </table>
                         <!-- Codes by Quackit.com -->
 
                     </div>
+
+                    <!-- Add User Modal -->
+                    <div class="Modal  addUserModal">
+                        <button id="addUserCloseModal" class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Add New User
+                        </h1>
+                        <form action="#" method="post" id="addNewUserForm">
+                            <label for="name">Name</label>
+                            <input type="text" name="_name" id="_name">
+                            
+                            <label for="name">Last Name</label>
+                            <input type="text" name="_lastName" id="_lastName">
+
+                            <label for="name">Email</label>
+                            <input type="email" name="_email" id="_email">
+
+                            <label for="name">Cellphone</label>
+                            <input type="text" name="_cellphone" id="_cellphone">
+                            
+                            <label for="name">Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_password" id="_password">
+                            </div>
+
+                            <label for="name">Repeat Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_password2" id="_password2">
+                            </div>
+
+                            <input type="button" value="Submit User" id="submitNewUserBtn">
+                        </form>
+                    </div>
+
+                    <!-- Update User Details Modal -->
+                    <div class="Modal updateUserModal">
+                        <button id="updateUserCloseModal"  class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Update User Details
+                        </h1>
+                        <form action="#" method="post" id="updateUserForm" name="updateUserForm">
+                            <label for="name">Enter User Id</label>
+                            <input type="text" name="_id" id="_userId">   
+                    
+                            <input type="button" value="Submit Id" id="updateUserIDBtn">
+                        </form>
+                    </div>
+
+                    <!-- Update User Details Second Modal -->
+                    <div class="Modal  updateUserSecondModal">
+                        <button id="updateUserCloseSecondModal" class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-edit"></i><br>
+                            Update User Details
+                        </h1>
+                        <form action="#" method="post" id="updateUserSecondForm" name="updateUserSecondForm">
+                            <label for="name">Name</label>
+                            <input type="text" name="_name" id="_updateName">
+                    
+                            <label for="name">Last Name</label>
+                            <input type="text" name="_lastName" id="_updateLastName">
+                    
+                            <label for="name">Email</label>
+                            <input type="email" name="_email" id="_updatEemail">
+                    
+                            <label for="name">Cellphone</label>
+                            <input type="text" name="_cellphone" id="_updateCellphone">
+                    
+                            <label for="name">Old Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibilityOld" id="pwdVisibilityOld">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updateOldPassword" id="_updateOldPassword">
+                            </div>
+
+                            <label for="name">Create New Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updatePassword" id="_updatePassword">
+                            </div>
+                    
+                            <label for="name">Repeat New Password</label>
+                            <div class="passBox">
+                                <button class="pwdVisibility" id="pwdVisibility">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <input type="password" name="_updatePassword2" id="_updatePassword2">
+                            </div>
+                    
+                            <input type="button" value="Submit User" id="submitUpdatedUserDetailsBtn">
+                        </form>
+                    </div>
+
+                    <!-- Remove User Modal -->
+                    <div class="Modal removeUserModal">
+                        <button id="removeUserCloseModal"  class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-times"></i><br>
+                            Remove User
+                        </h1>
+                        <form action="#" method="post" name="removeUserForm" id="removeUserForm">
+                            <label for="name">Enter User Id</label>
+                            <input type="text" name="_id" id="_id">
+                    
+                            <input type="button" value="Remove User" id="submitRemoveUserBtn">
+                        </form>
+                    </div>
                 </section>
             </div>
         </section>
     </div>
-</body>
 
+    <div class="errorMessageBox">
+        <h2>
+            An Error Occured
+        </h2>
+        <h4 id="errorMsg">
+
+        </h4>
+        <img src="resources\images\sad-emoji.gif" alt="success" />
+    </div>
+
+    <div class="successMessageBox">
+        <h1>
+            Success!
+        </h1>
+        <h4 id="successMsg">
+        
+        </h4>
+        <img src="resources\images\check-green.gif" alt="success" />
+    </div>
+</body>
+<script src="src/js/main.js"></script>
 </html>
