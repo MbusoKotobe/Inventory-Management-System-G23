@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS | Dashboard</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src\css\main.css">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1c3a9f7338.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="dashboard">
+            <div class="leftPanel">
+                <section class="dashboardLeftSection">
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-home"></i>
+                        <a href="#">
+                            Home
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-box-open"></i>
+                        <a href="">
+                            Products
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-cart-plus"></i>
+                        <a href="">
+                            Add Inventory
+                        </a>
+                    </div>
+
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-pencil-alt"></i>
+                        <a href="">
+                            Update Inventory
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-trash"></i>
+                        <a href="">
+                            Remove Inventory
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-users"></i>
+                        <a href="User.html">
+                            Users
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-bell"></i>
+                        <a href="" id="innerNotificationMessage">
+                            Notifications
+                            <div class="innerNotification">
+                                <h4>32</h4>
+                            </div>
+                        </a>
+                    </div>
+            
+                    <div class="dashboardLeftOption">
+                        <i class="fas fa-chart-bar"></i>
+                        <a href="">
+                            Analytics
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+         <div class="righPanel">
+                <header class="dashboardHeading">
+                    <h1>
+                        Remove Inventory
+
+                  </h1>
+
+
+ <section class="dashboardRightSectionUser">
+                    <div class="operations">
+                       
+
+                        <button id="removeUser">
+                            <i class="fas fa-user-times"></i>
+                            Remove Inventory
+                        </button>
+                    </div>
+
+ 
+ <!-- Remove User Modal -->
+                    <div class="Modal removeUserModal">
+                        <button id="removeUserCloseModal"  class="closeModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <h1>
+                            <i class="fas fa-user-times"></i><br>
+                            Remove Inventory
+                        </h1>
+                        <form action="#" method="post" name="removeUserForm" id="removeUserForm">
+                            <label for="name">Enter Barcode</label>
+                            <input type="text" name="_id" id="_id">
+                    
+                            <input type="button" value="Remove Inventory" id="submitRemoveUserBtn">
+                        </form>
+                    </div>
+            
+
+  
+
+
+
+
+<!-- CSS Code -->
+<style type="text/css" scoped>
+table.GeneratedTable {
+width:100%;
+background-color:#FFFFFF;
+border-collapse:collapse;border-width:0px;
+border-color:#FFFFFF;
+border-style:solid;
+color:#000000;
+margin-left: auto;
+margin-right: auto;
+
+
+}
+
+table.GeneratedTable td, table.GeneratedTable th {
+border-width:0px;
+border-color:#FFFFFF;
+border-style:solid;
+padding:2% 1.5%;
+border-bottom: solid;
+ border-top: solid;
+border-right: solid;
+border-left: solid
+
+}
+
+table.GeneratedTable thead {
+background-color:#B494D4;
+
+}
+
+
+
+
+}
+
+
+</style>
+
+<!-- HTML Code -->
+<table class="GeneratedTable" id = "tabledata" >
+<thead width: 50%>
+<tr class = "Row">
+<th align = "center">Product</th>
+<th align = "center">Barcode</th>
+</tr>
+</thead>
+<tbody>
+
+<tr >
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<script>
+
+var array =[["Product", "Barcode"],
+	    ["Granny Smith Apples", "4567687767"],
+	    ["Red Onions", "4566465767"],
+	    ["White Flour", "5656575567"],
+	    ["500ml Cedarberg Water", "4654646567"],
+            ["Lays Argentinian BBQ", "3456786677"],
+	    ["Chicken Soup", "4545676767"],
+            ["Chappies 100s", "6789865678"],
+	    ["Fruit Danties", "45678765788"],
+            ["Special K Kellogs", "45678664565"],
+	    ["Todays Mince Pies", "5577765456"],
+            ["1kg Selfraising Flour", "5576576878"],
+            ["All Bran Muffin Mix", "4567876577"],
+	    ["Pasta", "45678997979"],
+            ["Monster 6s", "3467897675"],
+	    ["Rice", "45678997878"]
+	    
+		        ],
+
+tabledata = document.getElementById("tabledata");
+
+for(var i = 0; i<tabledata.rows.length; i++)
+{
+for (var j = 0; j<tabledata.rows[i].cells.length; j++)
+{
+tabledata.rows[i].cells[j].innerHTML = array[i][j];
+}
+}
+
+
+
+
+</script>
+
+
+
+
+</head>
+</body>
+<script src="src/js/main.js"></script>
+</html>
+
+
+
+
+
+
+
